@@ -7,7 +7,7 @@
     <ProjectGuid>{A47E056D-ADBE-41CD-B13E-4D8198C3D9F5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>seqnum</RootNamespace>
+    <RootNamespace>SeqNum</RootNamespace>
     <AssemblyName>seqnum</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
