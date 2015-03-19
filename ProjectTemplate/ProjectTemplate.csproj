@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A47E056D-ADBE-41CD-B13E-4D8198C3D9F5}</ProjectGuid>
+    <ProjectGuid>{488825BE-8462-4956-8F9C-F276241EDC03}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SeqNum</RootNamespace>
-    <AssemblyName>SeqNumS</AssemblyName>
+    <RootNamespace>project_template</RootNamespace>
+    <AssemblyName>project_template</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +28,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PEPlugin">
@@ -48,19 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\pmxe\FormTab.cs">
-      <Link>PmxE\FormTab.cs</Link>
-    </Compile>
-    <Compile Include="..\pmxe\Interfaces.cs">
-      <Link>PmxE\Interfaces.cs</Link>
-    </Compile>
-    <Compile Include="..\pmxe\Objects.cs">
-      <Link>PmxE\Objects.cs</Link>
-    </Compile>
-    <Compile Include="..\pmxe\Pmx.cs">
-      <Link>PmxE\Pmx.cs</Link>
-    </Compile>
-    <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
