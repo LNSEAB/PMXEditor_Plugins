@@ -23,6 +23,21 @@ namespace PmxE
                 get { return vtx_.Position; }
                 set { vtx_.Position = value; }
             }
+
+            public PEPlugin.Pmx.IPXVertex Data
+            {
+                get { return vtx_; }
+            }
+        }
+
+        public class Face
+        {
+            private PEPlugin.Pmx.IPXFace face_;
+
+            public Face(PEPlugin.Pmx.IPXFace face)
+            {
+                face_ = face;
+            }
         }
 
         public class Material :
@@ -45,6 +60,11 @@ namespace PmxE
             {
                 get { return mtrl_.NameE; }
                 set { mtrl_.NameE = value; }
+            }
+
+            public PEPlugin.Pmx.IPXMaterial Data
+            {
+                get { return mtrl_; }
             }
         }
 
@@ -75,6 +95,11 @@ namespace PmxE
                 get { return bone_.Position; }
                 set { bone_.Position = value; }
             }
+
+            public PEPlugin.Pmx.IPXBone Data
+            {
+                get { return bone_; }
+            }
         }
 
         public class Morph :
@@ -98,6 +123,11 @@ namespace PmxE
                 get { return morph_.NameE; }
                 set { morph_.NameE = value; }
             }
+
+            public PEPlugin.Pmx.IPXMorph Data
+            {
+                get { return morph_; }
+            }
         }
 
         public class Node :
@@ -120,6 +150,11 @@ namespace PmxE
             {
                 get { return node_.NameE; }
                 set { node_.NameE = value; }
+            }
+
+            public PEPlugin.Pmx.IPXNode Data
+            {
+                get { return node_; }
             }
         }
 
@@ -156,6 +191,11 @@ namespace PmxE
                 get { return body_.Rotation; }
                 set { body_.Rotation = value; }
             }
+
+            public PEPlugin.Pmx.IPXBody Data
+            {
+                get { return body_; }
+            }
         }
 
         public class Joint :
@@ -191,6 +231,11 @@ namespace PmxE
                 get { return joint_.Rotation; }
                 set { joint_.Rotation = value; }
             }
+
+            public PEPlugin.Pmx.IPXJoint Data
+            {
+                get { return joint_; }
+            }
         }
 
         public class SoftBody :
@@ -213,6 +258,11 @@ namespace PmxE
             {
                 get { return sb_.NameE; }
                 set { sb_.NameE = value; }
+            }
+
+            public PEPlugin.Pmx.IPXSoftBody Data
+            {
+                get { return sb_; }
             }
         }
     }

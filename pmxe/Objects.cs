@@ -8,6 +8,18 @@ namespace PmxE
 {
     public class Objects
     {
+        public static List<Pmx.Vertex> GetSelectedVertices(PEPlugin.IPEPluginHost host, PEPlugin.Pmx.IPXPmx pmx)
+        {
+            var indices = host.Connector.View.PmxView.GetSelectedVertexIndices();
+            var vtx = new List< Pmx.Vertex >();
+
+            foreach( int i in indices ) {
+                vtx.Add( new Pmx.Vertex( pmx.Vertex[i]));
+            }
+
+            return vtx;
+        }
+
         public static List<Pmx.Material> GetSelectedMaterials(PEPlugin.IPEPluginHost host, PEPlugin.Pmx.IPXPmx pmx)
         {
             var indices = host.Connector.Form.GetSelectedMaterialIndices();

@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SeqNum</RootNamespace>
-    <AssemblyName>SeqNumS</AssemblyName>
+    <AssemblyName>SeqNum</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\PmxE\Form.cs">
+      <Link>PmxE\Form.cs</Link>
+    </Compile>
     <Compile Include="..\pmxe\FormTab.cs">
       <Link>PmxE\FormTab.cs</Link>
     </Compile>
@@ -60,7 +63,7 @@
     <Compile Include="..\pmxe\Pmx.cs">
       <Link>PmxE\Pmx.cs</Link>
     </Compile>
-    <Compile Include="Main.cs" />
+    <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

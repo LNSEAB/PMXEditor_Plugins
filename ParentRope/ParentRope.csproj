@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B1BF461F-62D2-4F7E-9071-47B391531FB4}</ProjectGuid>
+    <ProjectGuid>{2E939C05-8837-41E6-A116-D1C931741F18}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PmxE</RootNamespace>
-    <AssemblyName>pmxe</AssemblyName>
+    <RootNamespace>ParentRope</RootNamespace>
+    <AssemblyName>ParentRope</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -45,11 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form.cs" />
-    <Compile Include="FormTab.cs" />
-    <Compile Include="Interfaces.cs" />
-    <Compile Include="Objects.cs" />
-    <Compile Include="Pmx.cs" />
+    <Compile Include="ParentRopeClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
