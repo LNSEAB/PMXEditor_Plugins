@@ -8,6 +8,11 @@ namespace PmxE
 {
     public class Form
     {
+        public static FormTab GetSelectedTab(PEPlugin.IPEConnector conn)
+        {
+            return (FormTab)conn.Form.SelectedTabPage;
+        }
+
         public static void UpdateList(PEPlugin.IPEConnector conn)
         {
             conn.Form.UpdateList( PEPlugin.Pmd.UpdateObject.All );

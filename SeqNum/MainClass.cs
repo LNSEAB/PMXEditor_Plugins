@@ -33,7 +33,7 @@ namespace SeqNum
 
                 var pmx = args.Host.Connector.Pmx.GetCurrentState();
                 var form = args.Host.Connector.Form;
-                var tab = (PmxE.FormTab)form.SelectedTabPage;
+                var tab = PmxE.Form.GetSelectedTab( args.Host.Connector );
                 var pmx_view = args.Host.Connector.View.PmxView;
 
                 switch ( tab ) {
