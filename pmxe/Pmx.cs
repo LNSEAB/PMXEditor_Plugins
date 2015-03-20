@@ -96,6 +96,18 @@ namespace PmxE
                 set { bone_.Position = value; }
             }
 
+            public Bone Parent
+            {
+                get { return new Bone( bone_.Parent ); }
+                set { bone_.Parent = value.bone_; }
+            }
+
+            public Bone ToBone
+            {
+                get { return new Bone( bone_.ToBone ); }
+                set { bone_.ToBone = value.bone_; }
+            }
+
             public PEPlugin.Pmx.IPXBone Data
             {
                 get { return bone_; }

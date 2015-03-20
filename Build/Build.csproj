@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E939C05-8837-41E6-A116-D1C931741F18}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{28F3CC38-084F-4860-9878-E5B0C85699D9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ParentRope</RootNamespace>
-    <AssemblyName>ParentRope</AssemblyName>
+    <RootNamespace>Build</RootNamespace>
+    <AssemblyName>Build</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,43 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PEPlugin">
-      <HintPath>..\app\PmxEditor_0222c\Lib\PEPlugin\PEPlugin.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Windows" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\PmxE\Form.cs">
-      <Link>PmxE\Form.cs</Link>
-    </Compile>
-    <Compile Include="..\PmxE\FormTab.cs">
-      <Link>PmxE\FormTab.cs</Link>
-    </Compile>
-    <Compile Include="..\PmxE\Interfaces.cs">
-      <Link>PmxE\Interfaces.cs</Link>
-    </Compile>
-    <Compile Include="..\PmxE\Objects.cs">
-      <Link>PmxE\Objects.cs</Link>
-    </Compile>
-    <Compile Include="..\PmxE\Pmx.cs">
-      <Link>PmxE\Pmx.cs</Link>
-    </Compile>
-    <Compile Include="ParentRopeClass.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)app\PmxEditor_0222c\_plugin</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
