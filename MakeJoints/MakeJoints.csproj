@@ -46,8 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BodyList.cs" />
     <Compile Include="MainClass.cs" />
+    <Compile Include="MakeJointsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeJointsForm.Designer.cs">
+      <DependentUpon>MakeJointsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PmxE\Form.cs" />
+    <Compile Include="PmxE\FormTab.cs" />
+    <Compile Include="PmxE\Interfaces.cs" />
+    <Compile Include="PmxE\Objects.cs" />
+    <Compile Include="PmxE\Pmx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MakeJointsForm.resx">
+      <DependentUpon>MakeJointsForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
