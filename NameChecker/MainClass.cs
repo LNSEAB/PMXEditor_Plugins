@@ -27,10 +27,14 @@ namespace NameChecker
                 var pmx = args.Host.Connector.Pmx.GetCurrentState();
 
                 foreach ( var bone in pmx.Bone ) {
-                    if ( CheckFinger( bone ) ) {
+                    string name = CheckFinger( bone.Name );
+                    if ( name != null ) {
+                        bone.Name = name;
                         continue;
                     }
-                    if ( CHeckIK( bone ) ) {
+                    name = CheckIK( bone.Name );
+                    if ( name != null ) {
+                        bone.Name = name;
                         continue;
                     }
                 }
@@ -43,32 +47,28 @@ namespace NameChecker
             }
         }
         
-        private bool CheckFinger(PEPlugin.Pmx.IPXBone bone)
+        private string CheckFinger(string name)
         {
             string pattern = "((?:左|右).指)([1-3])";
 
-            var m = Regex.Match( bone.Name, pattern );
+            var m = Regex.Match( name, pattern );
             if ( !m.Success ) {
-                return false;
+                return null;
             }
 
-            bone.Name = m.Groups[1].Value + new string( m.Groups[2].Value.Select( c => (char)( '０' + ( c - '0' ) ) ).ToArray() );
-
-            return true;
+            return m.Groups[1].Value + new string( m.Groups[2].Value.Select( c => (char)( '０' + ( c - '0' ) ) ).ToArray() );
         }
 
-        private bool CHeckIK(PEPlugin.Pmx.IPXBone bone)
+        private string CheckIK(string name)
         {
             string pattern = "((?:左|右)(?:足|つま先))IK";
 
-            var m = Regex.Match( bone.Name, pattern );
+            var m = Regex.Match( name, pattern );
             if ( !m.Success ) {
-                return false;
+                return null;
             }
 
-            bone.Name = m.Groups[1].Value + "ＩＫ";
-
-            return true;
+            return m.Groups[1].Value + "ＩＫ";
         }
     }
 }

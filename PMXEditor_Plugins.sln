@@ -45,6 +45,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{E30CBF88
 		bin\Debug\dummy = bin\Debug\dummy
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C475FCC2-8AAB-433F-B8B2-3D46A347679C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameCheckerTest", "NameCheckerTest\NameCheckerTest.csproj", "{29B71403-23C6-411B-834F-41B88EEF68E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +75,10 @@ Global
 		{B9FDC5D4-1058-4271-B52A-63E59C1ECE8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9FDC5D4-1058-4271-B52A-63E59C1ECE8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9FDC5D4-1058-4271-B52A-63E59C1ECE8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29B71403-23C6-411B-834F-41B88EEF68E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B71403-23C6-411B-834F-41B88EEF68E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B71403-23C6-411B-834F-41B88EEF68E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B71403-23C6-411B-834F-41B88EEF68E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,5 +87,6 @@ Global
 		{B163D756-4D10-48D4-BF8D-D44881220223} = {A92AB728-DE7C-4AE5-9264-9EC697239917}
 		{DE8CD2DE-EAD5-4094-A6FC-1AF3439D3BDA} = {B163D756-4D10-48D4-BF8D-D44881220223}
 		{E30CBF88-F804-463C-97F6-C37B95BA06E5} = {B163D756-4D10-48D4-BF8D-D44881220223}
+		{29B71403-23C6-411B-834F-41B88EEF68E3} = {C475FCC2-8AAB-433F-B8B2-3D46A347679C}
 	EndGlobalSection
 EndGlobal
