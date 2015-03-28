@@ -45,14 +45,14 @@ namespace NameChecker
         
         private bool CheckFinger(PEPlugin.Pmx.IPXBone bone)
         {
-            string pattern = "((?:左|右).指)([0-9]+)";
+            string pattern = "((?:左|右).指)([1-3])";
 
             var m = Regex.Match( bone.Name, pattern );
             if ( !m.Success ) {
                 return false;
             }
 
-            bone.Name = m.Groups[0].Value + m.Groups[1].Value.Select( c => '０' + ( c - '0' ) );
+            bone.Name = m.Groups[1].Value + new string( m.Groups[2].Value.Select( c => (char)( '０' + ( c - '0' ) ) ).ToArray() );
 
             return true;
         }
@@ -66,7 +66,7 @@ namespace NameChecker
                 return false;
             }
 
-            bone.Name = m.Groups[0].Value + "ＩＫ";
+            bone.Name = m.Groups[1].Value + "ＩＫ";
 
             return true;
         }
