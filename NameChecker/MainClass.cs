@@ -11,7 +11,7 @@ namespace NameChecker
     public class MainClass :
         PEPlugin.PEPluginClass
     {
-        private const string caption_ = "標準ボーン名チェック";
+        private const string caption_ = "指の番号と足つま先IKを全角にする";
 
         public MainClass() :
             base()
