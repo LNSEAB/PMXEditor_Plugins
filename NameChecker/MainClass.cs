@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace NameChecker
+{
+    public class MainClass :
+        PEPlugin.PEPluginClass
+    {
+        private const string caption_ = "標準ボーン名チェック";
+
+        public MainClass() :
+            base()
+        {
+            m_option = new PEPlugin.PEPluginOption( false, true, caption_ );
+        }
+
+        public override void Run(PEPlugin.IPERunArgs args)
+        {
+            try {
+                base.Run( args );
+
+                var pmx = args.Host.Connector.Pmx.GetCurrentState();
+
+                foreach ( var bone in pmx.Bone ) {
+                    if ( CheckFinger( bone ) ) {
+                        continue;
+                    }
+                    if ( CHeckIK( bone ) ) {
+                        continue;
+                    }
+                }
+
+                args.Host.Connector.Pmx.Update( pmx );
+                args.Host.Connector.Form.UpdateList( PEPlugin.Pmd.UpdateObject.Bone );
+            }
+            catch ( Exception e ) {
+                MessageBox.Show( e.Message, caption_, MessageBoxButtons.OK, MessageBoxIcon.Error );
+            }
+        }
+        
+        private bool CheckFinger(PEPlugin.Pmx.IPXBone bone)
+        {
+            string pattern = "((?:左|右).指)([0-9]+)";
+
+            var m = Regex.Match( bone.Name, pattern );
+            if ( !m.Success ) {
+                return false;
+            }
+
+            bone.Name = m.Groups[0].Value + m.Groups[1].Value.Select( c => '０' + ( c - '0' ) );
+
+            return true;
+        }
+
+        private bool CHeckIK(PEPlugin.Pmx.IPXBone bone)
+        {
+            string pattern = "((?:左|右)(?:足|つま先))IK";
+
+            var m = Regex.Match( bone.Name, pattern );
+            if ( !m.Success ) {
+                return false;
+            }
+
+            bone.Name = m.Groups[0].Value + "ＩＫ";
+
+            return true;
+        }
+    }
+}
